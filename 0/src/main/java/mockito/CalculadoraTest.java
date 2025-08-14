@@ -15,4 +15,9 @@ public class CalculadoraTest {
 
     private Calculadora calculadora;
 
+    @BeforeEach
+    public void setup(){
+        this.calculadora = new Calculadora(servicoMatematico);
+    }
+
 }
