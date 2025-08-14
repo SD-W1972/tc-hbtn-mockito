@@ -23,7 +23,7 @@ public class Conta {
     }
 
     public void setSaldo(double saldo) {
-        this.saldo = saldo;
+        this.saldo += saldo;
     }
 
     @Override
