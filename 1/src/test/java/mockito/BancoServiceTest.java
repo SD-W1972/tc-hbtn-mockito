@@ -38,23 +38,25 @@ public class BancoServiceTest {
     @Test
     public void testDepositar() {
         // Criando mock do repositório
-
+        ContaRepository contaRepository = mock(ContaRepository.class);
 
         // Criando conta simulada
-
+        Conta conta = new Conta("54321", 2000.0);
 
         // Definindo comportamento do mock
-
+        when(contaRepository.buscarConta("54321")).thenReturn(conta);
 
         // Criando serviço com o mock
-
+        BancoService bancoService = new BancoService(contaRepository);
 
         // Executando depósito
-
+        bancoService.depositar("54321", 100.0);
 
         // Verificando se o saldo foi atualizado
-
+        Assertions.assertEquals(2100.0, conta.getSaldo());
 
         // Verificando se os métodos foram chamados corretamente
+        verify(contaRepository, times(1)).buscarConta("54321");
+        verify(contaRepository, times(1)).salvar(conta);
     }
 }
