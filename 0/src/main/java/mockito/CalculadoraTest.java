@@ -20,4 +20,14 @@ public class CalculadoraTest {
         this.calculadora = new Calculadora(servicoMatematico);
     }
 
+    @Test
+    public void testSomar(){
+        when(servicoMatematico.somar(2, 3)).thenReturn(5);
+
+        int result = calculadora.somar(2, 3);
+
+        Assertions.assertEquals(5, result);
+
+        verify(servicoMatematico).somar(2, 3);
+    }
 }
