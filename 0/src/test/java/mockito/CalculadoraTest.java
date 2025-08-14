@@ -1,5 +1,5 @@
-import mockito.Calculadora;
-import mockito.ServicoMatematico;
+package mockito;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
