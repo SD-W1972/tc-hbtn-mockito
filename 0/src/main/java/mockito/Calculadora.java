@@ -1,9 +1,13 @@
 package mockito;
 
 public class Calculadora {
-    public int soma(int a, int b){
-        ServicoMatematicoImpl servicoMatematico = new ServicoMatematicoImpl();
-        return servicoMatematico.somar(a, b);
+    private final ServicoMatematico servicoMatematico;
+
+    public Calculadora(ServicoMatematico servicoMatematico) {
+        this.servicoMatematico = servicoMatematico;
     }
 
+    public int somar(int a, int b){
+        return servicoMatematico.somar(a, b);
+    }
 }
