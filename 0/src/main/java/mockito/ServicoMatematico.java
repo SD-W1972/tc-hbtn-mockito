@@ -1,4 +1,5 @@
 package mockito;
 
-public class ServicoMatematico {
+public interface ServicoMatematico {
+    int somar(int a, int b);
 }
