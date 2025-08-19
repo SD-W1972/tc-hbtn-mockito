@@ -15,7 +15,7 @@ public class BancoServiceTest {
     public void testConsultarSaldo() {
         ContaRepository contaRepository = mock(ContaRepository.class);
 
-        Conta conta = new Conta("12345", 1000.0)
+        Conta conta = new Conta("12345", 1000.0);
 
         when(contaRepository.buscarConta("12345")).thenReturn(conta);
 
