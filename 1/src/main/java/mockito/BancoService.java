@@ -15,6 +15,8 @@ public class BancoService {
 
 
     public void depositar(String numeroConta, double valor) {
-        contaRepository.buscarConta(numeroConta).setSaldo(valor);
+        Conta conta = contaRepository.buscarConta(numeroConta);
+        conta.setSaldo(valor);
+        contaRepository.salvar(conta); 
     }
 }
